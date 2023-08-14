@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import './login'
 
 function App() {
+  const a = 2;
+  const b = 4;
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+     
+      <p>Learn react</p>
+
+       <ul>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+       </ul>
+
+       <div>
+        <h1 data-testid="mytestid"> using data test id to test </h1>
+        <span data-testid="get-sum" title="sum">{a + b}</span>
+       </div>
       </header>
+
     </div>
   );
 }

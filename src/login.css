@@ -1,0 +1,12 @@
+.login-base{
+    background: rgba(255, 255, 255, .7);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);    
+}
+
+.login-heads{
+    display: flex;
+     margin-top:10%;
+     margin-left:38%;
+
+}
