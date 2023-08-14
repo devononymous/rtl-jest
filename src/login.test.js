@@ -2,9 +2,6 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import Login from './login';
 import { waitFor } from '@testing-library/react';
 
-beforeEach(() => {
-    render(<Login />);
-  });
 
 
   jest.mock("axios", () => ({
@@ -20,16 +17,22 @@ beforeEach(() => {
 
 
 test("username input should be rendered", ()=>{
+    render(<Login />);
+
     const userInputEl = screen.getByPlaceholderText(/username/i);
     expect(userInputEl).toBeInTheDocument()
 })
 
 test("password input should be rendered", ()=>{
+    render(<Login />);
+
     const passwordInputEl = screen.getByPlaceholderText(/username/i);
     expect(passwordInputEl).toBeInTheDocument()
 })
 
 test("username input should change", ()=>{
+    render(<Login />);
+
     const userNameInputEl = screen.getByPlaceholderText(/username/i);
     const testValue = "test"
     fireEvent.change(userNameInputEl,{target:{value:testValue}});
@@ -38,6 +41,8 @@ test("username input should change", ()=>{
 
 
 test("password input should change", ()=>{
+    render(<Login />);
+
     
     const userPasswordEl = screen.getByPlaceholderText(/password/i);
     const testValue = "test"
@@ -48,6 +53,7 @@ test("password input should change", ()=>{
 })
 
 test("button should be disabled", ()=>{
+    render(<Login />);
 
     const buttonInputEl = screen.getByRole("button");
     expect(buttonInputEl).toBeDisabled()
@@ -61,6 +67,8 @@ test("loading should not be rendered", ()=>{
 })
 
 test("button should not be disabled when inputs exist", ()=>{
+    render(<Login />);
+
     const buttonEl = screen.getByRole("button");
     const userNameInputEl = screen.getByPlaceholderText(/username/i);
     const userPasswordEl = screen.getByPlaceholderText(/password/i);
@@ -74,6 +82,7 @@ test("button should not be disabled when inputs exist", ()=>{
 
 
 test("loading should not  be rendered when click", ()=>{
+    render(<Login />);
 
     const buttonEl = screen.getByRole("button");
     const userNameInputEl = screen.getByPlaceholderText(/username/i);
@@ -89,6 +98,7 @@ test("loading should not  be rendered when click", ()=>{
 })
 
 test("loading should not  be rendered after fetching", async()=>{
+    render(<Login />);
 
     const buttonEl = screen.getByRole("button");
     const userNameInputEl = screen.getByPlaceholderText(/username/i);
@@ -106,6 +116,7 @@ test("loading should not  be rendered after fetching", async()=>{
 
 
 test("user  should not  be rendered after fetching", async()=>{
+    render(<Login />);
 
     const buttonEl = screen.getByRole("button");
     const userNameInputEl = screen.getByPlaceholderText(/username/i);
